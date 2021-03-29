@@ -1,0 +1,17 @@
+# Ignore the node_modules directory
+
+
+# Ignore Logs
+logs
+*.log
+
+# Ignore the build directory
+/target
+
+# The file containing environment variables 
+.env
+
+# Ignore IDE specific files
+.settings/
+.classpath
+.project
