@@ -2,16 +2,13 @@
 
 
 # Ignore Logs
-logs
-*.log
+
 
 # Ignore the build directory
-/target
+
 
 # The file containing environment variables 
-.env
+
 
 # Ignore IDE specific files
-.settings/
-.classpath
-.project
+ś

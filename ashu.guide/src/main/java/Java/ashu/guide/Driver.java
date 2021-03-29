@@ -1,22 +1,36 @@
 package Java.ashu.guide;
 
 import Java.ashu.guide.cl.ClassLoaderDemo;
+import Java.ashu.guide.dt.PrimitiveDataType;
 
 /**
  * Class loader
- *
+ * @author Ashok Kumar Jha
+ * 
  */
 public class Driver {
-	
+
 	public static void main(String[] args) {
-		Driver.pocClassLoader();
+		int key = 1;
+		switch (key) {
+		case 1:
+			PrimitiveDataType.describe();
+			break;
+		case 15:
+			Driver.pocClassLoader();
+			break;
+		default:
+			System.out.println("Here to help you ; Dial required number!");
+			break;
+		}
+
 	}
-	
-	
-	
-	
+
+	/**
+	 * Class loader POC
+	 */
 	public static void pocClassLoader() {
-		
+
 		// classloader name of current class.
 		// Application/System classloader will load this class
 
@@ -26,7 +40,7 @@ public class Driver {
 		try {
 			ClassLoaderDemo obj = c.newInstance();
 			obj.hello();
-			
+
 		} catch (InstantiationException ex) {
 			ex.printStackTrace();
 		} catch (IllegalAccessException ex) {
