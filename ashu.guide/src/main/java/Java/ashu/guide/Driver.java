@@ -1,5 +1,6 @@
 package Java.ashu.guide;
 
+import Java.ashu.guide.cl.ArrayDemo;
 import Java.ashu.guide.cl.ClassLoaderDemo;
 import Java.ashu.guide.dt.PrimitiveDataType;
 
@@ -14,7 +15,12 @@ public class Driver {
 		int key = 1;
 		switch (key) {
 		case 1:
+			ArrayDemo.cpOfRange();
+			ArrayDemo.cp();
+			break;
+		case 14:
 			PrimitiveDataType.describe();
+			PrimitiveDataType.literals();
 			break;
 		case 15:
 			Driver.pocClassLoader();
