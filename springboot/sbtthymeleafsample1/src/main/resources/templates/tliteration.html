@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns:th="http://wwwthymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Thymeleaf iteration with Bootstrap sample</title>
+<link th:href="@{/css/bootstrap.min.css}" rel="stylesheet">
+</head>
+<body>
+	<div class="container">
+		<div class="row"></div>
+		<table class="table table-responsive table-bordered .table-striped">
+			<thead>
+				<tr>
+					<th>First Name</th>
+					<th>Last Name</th>
+					<th>Email</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="employee: ${employees}">
+					<td th:text="${employee.firstName}"></td>
+					<td th:text="${employee.lastName}"></td>
+					<td th:text="${employee.email}"></td>
+				</tr>
+				<tr th:each="employee: ${employees}"
+				    th:style="${employeeStat.odd}? 'font-weight : bold;'"
+				    th:alt-title="${employeeStat.even}? 'even' : 'odd'" >
+					<td th:text="${employee.firstName}"></td>
+					<td th:text="${employee.lastName}"></td>
+					<td th:text="${employee.email}"></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+
+</body>
+</html>
