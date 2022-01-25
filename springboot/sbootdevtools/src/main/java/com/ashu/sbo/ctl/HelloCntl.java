@@ -65,7 +65,7 @@ public class HelloCntl {
 	 * @return Student
 	 */
 	@GetMapping("/ashu/student/q")
-	public Student getStudentQ(@RequestParam(name="f") String firstName, 
+	public Student getStudentDetail(@RequestParam(name="f") String firstName, 
 			@RequestParam(name="l") String lastName, 
 			@RequestParam(name="c") String level) {
 		return new Student(firstName, lastName, level);
