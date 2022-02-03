@@ -5,6 +5,9 @@ package com.ashu.sbt.micro.service.payment.service.cntl;
 
 import java.util.List;
 
+import org.apache.commons.logging.Log;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -21,14 +24,17 @@ import com.ashu.sbt.micro.service.payment.service.srv.PaymentService;
 @RestController
 @RequestMapping("/ashu/payment")
 public class PaymentCntl {
+	private static final Logger log = LoggerFactory.getLogger(PaymentCntl.class);
 
 	@Autowired
 	private PaymentService pmsrv;
-	
+
 	@PostMapping("/pay")
 	public Payment doPayment(@RequestBody Payment payment) {
+		log.info(payment.toString());
 		return pmsrv.makePayment(payment);
 	}
+
 	@PostMapping("/qrp")
 	public List<Payment> allPayment() {
 		return pmsrv.queryAllPayment();

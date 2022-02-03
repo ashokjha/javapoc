@@ -42,7 +42,7 @@ public class OrderController {
 		payment.setAmount(order.getPrice());
 		payment.setOrderId(order.getId());
 		// Eureka API Call help in url hardcoding
-		Payment pay =  rstmp.postForObject("http://localhost:9010/ashu/payment/pay", payment, Payment.class);
+		Payment pay =  rstmp.postForObject("http://PAYMENT-SERVICE/ashu/payment/pay", payment, Payment.class);
 		
 		//This will be done by Hystrix
 		PayOrderTransRespose potr = new PayOrderTransRespose(order,

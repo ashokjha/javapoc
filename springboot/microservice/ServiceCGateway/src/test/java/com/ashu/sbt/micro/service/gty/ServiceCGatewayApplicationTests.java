@@ -1,11 +1,12 @@
-package com.ashu.sbt.micro.service.order.service;
+package com.ashu.sbt.micro.service.gty;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class OrderServiceApplicationTests {
+class ServiceCGatewayApplicationTests {
 
+	@Test
 	void contextLoads() {
 	}
 
