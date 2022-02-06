@@ -3,14 +3,21 @@ spring:
     name: GATEWAY-SERVICE
   cloud:    gateway:      routes:      - id: payment-service
         uri: lb://PAYMENT-SERVICE
-        predicates:        - Path=/ashu/payment/**       - id: order-service
+        predicates:        - Path=/ashu/payment/**
+        filters:          - name: CircuitBreaker
+            args:
+              name: payment-service
+              fallbackUri: forward:/paymentSrvFb
+              - id: order-service
         uri: lb://ORDER-SERVICE
         predicates:
-        - Path=/ashu/order/**           
-   
-        
-      
-    
+          - Path=/ashu/order/**
+        filters:
+          - name: CircuitBreaker
+            args:
+              name: order-service
+              fallbackUri: forward:/orderSrvFb
+     
 eureka:  client:    register-with-eureka: true
     fetch-registry: true
     service-url:      defaultZone: http://localhost:8761/eureka
@@ -18,3 +25,30 @@ eureka:  client:    register-with-eureka: true
 
 server:
   port: 8989
+  
+resilience4j:
+  circuitbreaker:
+    configs:
+      default:
+        registerHealthIndicator: true
+        slidingWindowSize: 10
+        minimumNumberOfCalls: 5
+        permittedNumberOfCallsInHalfOpenState: 3
+        automaticTransitionFromOpenToHalfOpenEnabled: true
+        waitDurationInOpenState: 5s
+        failureRateThreshold: 50
+        eventConsumerBufferSize: 10
+        recordExceptions:
+                - org.springframework.web.client.HttpServerErrorException
+                - java.util.concurrent.TimeoutException
+                - java.io.IOException
+        sliding-window-type: COUNT_BASED
+        
+    instances:
+      mainService:
+        baseConfig: default          
+management:
+  endpoints.web.exposure.include: '*'
+  endpoint:
+    health:
+      show-details: always          

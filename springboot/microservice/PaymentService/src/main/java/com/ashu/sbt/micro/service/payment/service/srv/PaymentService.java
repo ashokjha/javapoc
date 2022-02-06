@@ -14,7 +14,7 @@ import com.ashu.sbt.micro.service.payment.service.ent.Payment;
 import com.ashu.sbt.micro.service.payment.service.repo.IPaymentRepository;
 
 /**
- * @author Ashok Kumar Jha
+ * @author Ashok Kumar Jha (ashu.kr.jha@gmail.com)
  *
  */
 @Service

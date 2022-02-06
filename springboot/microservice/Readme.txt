@@ -46,13 +46,16 @@ For Payment do post request with
 
 
 
-Uses below:
-     java 1.8
-     Spring-boot 2.5.4 
-     in memory database
-	 in memory tomcat
-     Spring Cloud Gateway 2020.0.3
-	 eureka-client   2020.0.03
-	 eureka-server   2020.0.03
+Microservice use below:
+     java                                    1.8
+     Spring-boot                             2.5.4 
+     h2database
+	 default tomcat
+     Spring Cloud Gateway                    2020.0.3
+	 eureka-client                           
+	 eureka-server                           
+	 circuitbreaker-resilience4j             
+	 circuitbreaker-reactor-resilience4j     
+	 
 	 
 	          	          	 

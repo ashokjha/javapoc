@@ -4,7 +4,7 @@
 package com.ashu.sbt.micro.service.order.service.dto.bean;
 
 /**
- * @author Ashok Kumar Jha
+ * @author Ashok Kumar Jha (ashu.kr.jha@gmail.com)
  *
  */
 

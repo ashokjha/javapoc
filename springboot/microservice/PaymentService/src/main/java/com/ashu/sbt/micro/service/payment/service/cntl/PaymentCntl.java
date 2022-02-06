@@ -5,7 +5,6 @@ package com.ashu.sbt.micro.service.payment.service.cntl;
 
 import java.util.List;
 
-import org.apache.commons.logging.Log;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,7 +17,7 @@ import com.ashu.sbt.micro.service.payment.service.ent.Payment;
 import com.ashu.sbt.micro.service.payment.service.srv.PaymentService;
 
 /**
- * @author Ashok Kumar Jha
+ * @author Ashok Kumar Jha (ashu.kr.jha@gmail.com)
  *
  */
 @RestController

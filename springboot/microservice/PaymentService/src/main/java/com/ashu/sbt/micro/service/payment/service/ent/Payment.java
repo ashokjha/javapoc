@@ -9,7 +9,7 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 /**
- * @author Ashok Kumar Jha
+ * @author Ashok Kumar Jha (ashu.kr.jha@gmail.com)
  *
  */
 @Entity

@@ -7,7 +7,7 @@ import com.ashu.sbt.micro.service.order.service.dto.bean.Payment;
 import com.ashu.sbt.micro.service.order.service.ent.Order;
 
 /**
- * @author Ashok Kumar Jha
+ * @author Ashok Kumar Jha (ashu.kr.jha@gmail.com)
  *
  */
 public class PayOrderTransRequest {

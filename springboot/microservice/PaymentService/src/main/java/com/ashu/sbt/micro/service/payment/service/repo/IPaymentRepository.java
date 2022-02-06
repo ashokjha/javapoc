@@ -9,7 +9,7 @@ import org.springframework.stereotype.Repository;
 import com.ashu.sbt.micro.service.payment.service.ent.Payment;
 
 /**
- * @author Ashok Kumar Jha
+ * @author Ashok Kumar Jha (ashu.kr.jha@gmail.com)
  *
  */
 @Repository
