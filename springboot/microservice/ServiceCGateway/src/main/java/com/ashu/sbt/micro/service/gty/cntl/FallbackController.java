@@ -3,6 +3,7 @@
  */
 package com.ashu.sbt.micro.service.gty.cntl;
 
+import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -13,6 +14,7 @@ import reactor.core.publisher.Mono;
  *
  */
 @RestController
+@RefreshScope
 public class FallbackController {
 	
 	@RequestMapping("/paymentSrvFb")

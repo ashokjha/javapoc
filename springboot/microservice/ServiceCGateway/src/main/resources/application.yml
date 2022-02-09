@@ -1,6 +1,8 @@
 spring:
   application:
     name: GATEWAY-SERVICE
+  config:
+    import: "optional:configserver:"
   cloud:    gateway:      routes:      - id: payment-service
         uri: lb://PAYMENT-SERVICE
         predicates:        - Path=/ashu/payment/**
@@ -17,11 +19,7 @@ spring:
             args:
               name: order-service
               fallbackUri: forward:/orderSrvFb
-     
-eureka:  client:    register-with-eureka: true
-    fetch-registry: true
-    service-url:      defaultZone: http://localhost:8761/eureka
-  instance:    hostname: localhost
+
 
 server:
   port: 8989

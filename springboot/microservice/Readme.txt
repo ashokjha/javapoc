@@ -1,27 +1,38 @@
 
 In Order to Execute the Microservice follow below process
-Step 1 : From ServiceRegistry execute 
+Step 1 : For Registry Service execute below cmd from ServiceRegistry directory  
          runservicereg.cmd
+
+Step 2 : For Configuration Server execute below cmd from SampleConfigServer directory 
+         runCFGServer.cmd.cmd	
 		 
-Step 2 : From OrderService execute 
+Step 3 : For API Gateway execute below cmd from  ServiceCGateway directory 
+         rungwyAPISer.cmd	
+
+Step 4 : For Order Service execute below cmd from OrderService directory 
          runorderservice.cmd
 		 
-Step 3 : From PaymentService execute 
+Step 5 : For Payment Service execute below cmd from PaymentService directory 
          runPySer.cmd
 		 
-Step 4 : From ServiceCGateway execute 
-         rungwyAPISer.cmd		 
+	 
 
 
-Intial configuration uses single machine with below mapping
+Intial configuration uses single machine with below port mapping
+
 Eureka Registry Service 
         port: 8761
+Config Server
+       port: 9888
+Gateway API 
+        port: 8989
+  
 Payment Service 
         port: 9010
 Order Service 
         port: 9001
-Gateway API 
-        port: 8989
+	
+		
          	          
 
 To Test Use Below URL:
@@ -48,14 +59,26 @@ For Payment do post request with
 
 Microservice use below:
      java                                    1.8
-     Spring-boot                             2.5.4 
+     Spring-boot                             2.5.9 
      h2database
 	 default tomcat
-     Spring Cloud Gateway                    2020.0.3
-	 eureka-client                           
-	 eureka-server                           
-	 circuitbreaker-resilience4j             
-	 circuitbreaker-reactor-resilience4j     
+	 Spring Cloud                           2020.0.3
+	 spring-boot-starter-web
+	 spring-boot-starter-data-jpa
+	 spring-cloud-starter-gateway
+	 spring-cloud-starter-netflix-eureka-client                           
+	 spring-cloud-starter-netflix-eureka-server                           
+	 spring-boot-starter-actuator      
+	 spring-cloud-starter-circuitbreaker-resilience4j
+     spring-cloud-starter-circuitbreaker-reactor-resilience4j
+	 spring-cloud-config-server
+	 spring-cloud-starter-config
+	 
+Common Configuration privided by config server: 
+https://github.com/ashokjha/cloudconfigsrv
+    
+	 
+                	 
 	 
 	 
 	          	          	 

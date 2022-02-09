@@ -3,9 +3,14 @@
  */
 package com.ashu.sbt.micro.service.order.service.cntl;
 
+
 import java.util.List;
 
+
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.cloud.context.config.annotation.RefreshScope;
+import org.springframework.context.annotation.Lazy;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -26,15 +31,19 @@ import io.github.resilience4j.circuitbreaker.annotation.CircuitBreaker;
  */
 @RestController
 @RequestMapping("/ashu/order")
-
+@RefreshScope
 public class OrderController {
 
 	private static final String PAYMENT_SERVICE = "paymentService";
+
+	@Value("${microservice.payment_service.endpoints.endpoint.uri}")
+	private String ENDPOINT_URI;
 
 	@Autowired
 	private OrderService ors;
 
 	@Autowired
+	@Lazy
 	RestTemplate rstmp;
 
 	@PostMapping("/bs")
@@ -47,7 +56,7 @@ public class OrderController {
 		Payment payment = req.getPayment();
 		payment.setAmount(order.getPrice());
 		payment.setOrderId(order.getId());
-		Payment pay = rstmp.postForObject("http://PAYMENT-SERVICE/ashu/payment/pay", payment, Payment.class);
+		Payment pay = rstmp.postForObject(ENDPOINT_URI, payment, Payment.class);
 		PayOrderTransRespose potr = new PayOrderTransRespose(order, pay.getAmount(), pay.getTransactionId(),
 				(pay.getPaymentStatus().equalsIgnoreCase("SUCCESSFUL") ? successMessage : failMessage));
 		return potr;

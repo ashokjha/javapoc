@@ -14,15 +14,11 @@ spring:
       enabled: false
   application:
     name: PAYMENT-SERVICE
+  config:
+    import: "optional:configserver:"
+    
 
-eureka:
-  client:
-    register-with-eureka: true
-    fetch-registry: true
-    service-url:
-      defaultZone: http://localhost:8761/eureka/
-  instance:
-    hostname: localhost
+
 
 logging.config: logback.xml
 
