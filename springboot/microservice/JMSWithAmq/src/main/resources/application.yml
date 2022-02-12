@@ -1,0 +1,11 @@
+
+spring:
+  config:
+      import: "configserver:http://localhost:9888"  
+  application:
+    name: SampleMQ_APPLICATION
+
+       
+logging.config: logback.xml
+
+server.port: 8990

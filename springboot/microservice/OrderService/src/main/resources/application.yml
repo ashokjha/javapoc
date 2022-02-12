@@ -15,9 +15,7 @@ spring:
   application:
     name: ORDER-SERVICE
   config:
-    uri:
     import: "configserver:http://localhost:9888"  
-
 
 resilience4j:
   circuitbreaker:
@@ -34,8 +32,7 @@ resilience4j:
         slidingWindowType: count-based      
 
 management:
-  endpoints.web.exposure.include: '*'
-  endpoint:
-    health:
-      show-details: always        
+  health:
+    refresh:
+      enabled: true      
      
