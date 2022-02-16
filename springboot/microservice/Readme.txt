@@ -43,7 +43,9 @@ Payment Service
 		
 Order Service 
         port: 9001
-	
+
+Reporting Service 
+        port: 9011	
 		
          	          
 
@@ -80,7 +82,9 @@ Microservice use below:
 
      ActiveMQ                               apache-activemq-5.11.1
          Start MQ server using 
-                 bin/activemq start >  E://log/activemqlog  2>&1 &;		 
+                 bin/activemq start >  E://log/activemqlog  2>&1 &;	
+     Jasper
+              	 
      h2database
 	 default tomcat
 	 Spring Cloud                           2020.0.3
@@ -94,6 +98,7 @@ Microservice use below:
      spring-cloud-starter-circuitbreaker-reactor-resilience4j
 	 spring-cloud-config-server
 	 spring-cloud-starter-config
+	 net.sf.jasperreports jasperreports      6.16.0
 	 
 Common Configuration privided by config server: 
 https://github.com/ashokjha/cloudconfigsrv

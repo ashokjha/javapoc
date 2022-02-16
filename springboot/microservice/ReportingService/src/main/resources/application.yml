@@ -1,0 +1,19 @@
+
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/olnbusbk?useSSL=false
+    username: root
+    password: Ashu.Kr.Jha@gma1l.c0m
+  application:
+    name: REPORTING-SERVICE
+  config:
+    import: "configserver:http://localhost:9888"  
+  
+server:
+  port: 9002
+
+logging.config: logback.xml  
+
+report.path : C:\\Report\\
+
+report.template.path : "classpath:rpt\\"
