@@ -1,4 +1,4 @@
-# This repository For Springboot:
+# This repository for Springboot:
 Repository has following modules:
 1. **web** : Not specified then is by default web container (tomcat) and h2 database <BR>
 1.1. **Demo** : Blank web module  <BR>
