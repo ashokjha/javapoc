@@ -17,5 +17,4 @@ Repository has following modules:
 3.5. **Order Service**  <BR>
 3.6. **Payment Service** <BR>
 3.7. **WIP** : Continue <BR>
-  <BR>
-3. **AIP** <BR>
+4. **AIP** : continue<BR>
