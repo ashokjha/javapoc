@@ -9,4 +9,15 @@
 7. **Optional** and **with steam API**
 8. **Filter**, **map** and **reduce**
 9. **Parallel Streams**
+
+
+## To Create Docker following done
+a. Created Dockerfile in root directory
+
+b. From docker command in project root directory executed
+`docker build -t java8poc.jar . `  
   
+**To check via docker used**
+
+` docker run -p 9090:8080 java8poc.jar`   
+Upload on dockerhub @TODO 

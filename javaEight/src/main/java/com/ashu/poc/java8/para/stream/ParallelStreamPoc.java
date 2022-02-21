@@ -21,6 +21,7 @@ public class ParallelStreamPoc {
 		starttime=System.currentTimeMillis();
 		IntStream.range(1, 100).parallel().forEach(System.out::println);
 		long timeinparallel= System.currentTimeMillis()-starttime;
+		
 		System.out.println("Time Taken in Sequential = "+ timeinseq +"ms");
 		System.out.println("Time Taken in Parallel = "+ timeinparallel+"ms");
 		
@@ -42,14 +43,17 @@ public class ParallelStreamPoc {
 	public static void withBiggerDataset() {
 		
 		long starttime=System.currentTimeMillis();
-		System.out.println("Average Experiance  10000 Employee by Sequential Stream : " 
+		System.out.println("Average Experiance  10000 Employee by Sequential Stream => " 
 		    + EmployeeDao.getAllEmployee().stream().map(Employee::getExp)
 		    .mapToDouble(i->i).average().getAsDouble());
+		
 		long timeinseq = (System.currentTimeMillis()-starttime);
 		starttime=System.currentTimeMillis();
-		System.out.println("Processing time for 10000 Employee in Parallel Stream :"
+		
+		System.out.println("Average Experiance 10000 Employee in Parallel Stream => "
 		    +EmployeeDao.getAllEmployee().stream().parallel().map(Employee::getExp)
 		    .mapToDouble(i->i).average().getAsDouble());
+		
 		long timeinparallel= System.currentTimeMillis()-starttime;
 		System.out.println("Time Taken in Sequential = "+ timeinseq +"ms");
 		System.out.println("Time Taken in Parallel = "+ timeinparallel+"ms");
