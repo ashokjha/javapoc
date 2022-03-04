@@ -20,7 +20,10 @@ Step 6: In this Active MQ used
          For Verification execute:
          runMQApp.cmd
               		 
-	 
+Step 7:  For Reporting Service
+         Execute
+		 runReporting.cmd
+		 
 
 
 Intial configuration uses single machine with below port mapping
@@ -45,7 +48,7 @@ Order Service
         port: 9001
 
 Reporting Service 
-        port: 9011	
+        port: 9002	
 		
          	          
 
@@ -99,9 +102,12 @@ Microservice use below:
 	 spring-cloud-config-server
 	 spring-cloud-starter-config
 	 net.sf.jasperreports jasperreports      6.16.0
+	 security using jjwt
 	 
 Common Configuration privided by config server: 
 https://github.com/ashokjha/cloudconfigsrv
+
+for reporiNg sample db script also available in 
     
 	 
                 	 
