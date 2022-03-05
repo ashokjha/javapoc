@@ -16,5 +16,6 @@ Repository has following modules:
 3.4. **API Gateway** using cloud Gateway <BR>
 3.5. **Order Service**  <BR>
 3.6. **Payment Service** <BR>
-3.7. **WIP** : Continue <BR>
+3.7. **Security** <BR>   
+3.8. **WIP** : Continue <BR>
 4. **AIP** : continue<BR>
